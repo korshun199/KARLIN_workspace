@@ -1,5 +1,2 @@
 __pycache__/
 *.py[cod]
-models.sqlite3
-catalog.html
-prices.csv
