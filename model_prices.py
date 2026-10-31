@@ -275,9 +275,9 @@ DASHBOARD_TEMPLATE = r'''<!doctype html>
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 8% 0%,#e7edff 0,transparent 35%),var(--bg);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 .shell{max-width:1240px;margin:0 auto;padding:42px 28px 60px}.hero{position:relative;overflow:hidden;border-radius:26px;padding:34px 38px;color:#fff;background:linear-gradient(120deg,#202d52,#435ac1 67%,#7679da);box-shadow:0 20px 60px #34438d35}
 .hero:after{content:"";position:absolute;width:360px;height:360px;right:-70px;top:-200px;border:1px solid #ffffff28;border-radius:50%;box-shadow:0 0 0 38px #ffffff0d,0 0 0 82px #ffffff0a}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;color:#b8f6e2}.hero h1{position:relative;margin:10px 0 7px;font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}.hero p{position:relative;margin:0;color:#d9e1ff}.hero-meta{position:relative;display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.pill{padding:7px 12px;border:1px solid #ffffff31;border-radius:999px;background:#ffffff13;font-size:12px;color:#f0f2ff}
-.panel{margin-top:22px;background:var(--paper);border:1px solid #e8edf5;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:19px 22px;border-bottom:1px solid var(--line)}.search-wrap{position:relative;flex:1;max-width:540px}.search-wrap:before{content:"⌕";position:absolute;left:14px;top:6px;font-size:25px;color:#8994a8}.search{width:100%;height:44px;padding:0 15px 0 42px;border:1px solid #dfe5ee;border-radius:12px;background:#fbfcfe;color:var(--ink);font:inherit;outline:none}.search:focus{border-color:#8392f0;box-shadow:0 0 0 3px #6476e51c}.sort-label{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:13px}.sort{height:42px;padding:0 34px 0 12px;border:1px solid #dfe5ee;border-radius:11px;background:#fff;color:var(--ink);font:inherit}
-.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}thead th{position:sticky;top:0;z-index:1;background:#fafbfe;color:#7d899e;text-align:left;font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:14px 18px;border-bottom:1px solid var(--line);white-space:nowrap}thead th button{all:unset;cursor:pointer}thead th button:hover{color:var(--blue)}tbody td{padding:14px 18px;border-bottom:1px solid #eef1f6;vertical-align:middle}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f8faff}.model{font-weight:750;letter-spacing:-.01em}.description{max-width:410px;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.4}.provider{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#eff2ff;color:#4556a6;font-size:12px;font-weight:650;white-space:nowrap}.price{font-variant-numeric:tabular-nums;font-weight:750;white-space:nowrap}.price.in{color:#13795b}.price.out{color:#ab4c81}.context{font-variant-numeric:tabular-nums;color:#59657a;white-space:nowrap}.context small{display:block;color:#9aa3b2;font-size:10px}.count{padding:12px 22px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}.empty{text-align:center;padding:42px;color:var(--muted)}.foot{padding:16px 4px;color:#8490a3;font-size:12px}
-@media(max-width:700px){.shell{padding:18px 12px 32px}.hero{padding:25px 22px;border-radius:20px}.toolbar{align-items:stretch;flex-direction:column}.sort-label{justify-content:space-between}.sort{flex:1}.panel{border-radius:16px}}
+.panel{margin-top:22px;background:var(--paper);border:1px solid #e8edf5;border-radius:20px;box-shadow:var(--shadow);overflow:hidden}.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:19px 22px;border-bottom:1px solid var(--line)}.search-wrap{position:relative;flex:1;max-width:540px}.search-wrap:before{content:"⌕";position:absolute;left:14px;top:6px;font-size:25px;color:#8994a8}.search{width:100%;height:44px;padding:0 15px 0 42px;border:1px solid #dfe5ee;border-radius:12px;background:#fbfcfe;color:var(--ink);font:inherit;outline:none}.search:focus{border-color:#8392f0;box-shadow:0 0 0 3px #6476e51c}.sort-hint{color:var(--muted);font-size:12px}
+.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}thead th{position:sticky;top:0;z-index:1;background:#fafbfe;color:#7d899e;text-align:left;font-size:11px;letter-spacing:.09em;text-transform:uppercase;padding:14px 18px;border-bottom:1px solid var(--line);white-space:nowrap}thead th[aria-sort]{color:#4558a6}.sort-buttons{display:inline-flex;gap:2px;vertical-align:middle;margin-left:6px}.sort-arrow{width:21px;height:21px;padding:0;border:0;border-radius:6px;background:transparent;color:#a4adbd;font-family:inherit;font-size:13px;font-weight:700;line-height:21px;cursor:pointer}.sort-arrow:hover,.sort-arrow:focus-visible{background:#edf0ff;color:var(--blue);outline:none}.sort-arrow.active{background:#e8ecff;color:#4358c2}tbody td{padding:14px 18px;border-bottom:1px solid #eef1f6;vertical-align:middle}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#f8faff}.model{font-weight:750;letter-spacing:-.01em}.description{max-width:410px;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.4}.provider{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:#eff2ff;color:#4556a6;font-size:12px;font-weight:650;white-space:nowrap}.price{font-variant-numeric:tabular-nums;font-weight:750;white-space:nowrap}.price.in{color:#13795b}.price.out{color:#ab4c81}.context{font-variant-numeric:tabular-nums;color:#59657a;white-space:nowrap}.context small{display:block;color:#9aa3b2;font-size:10px}.count{padding:12px 22px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}.empty{text-align:center;padding:42px;color:var(--muted)}.foot{padding:16px 4px;color:#8490a3;font-size:12px}
+@media(max-width:700px){.shell{padding:18px 12px 32px}.hero{padding:25px 22px;border-radius:20px}.toolbar{align-items:stretch;flex-direction:column}.panel{border-radius:16px}}
 </style>
 </head>
 <body>
@@ -291,12 +291,16 @@ DASHBOARD_TEMPLATE = r'''<!doctype html>
   <section class="panel" aria-label="Сравнение цен моделей">
     <div class="toolbar">
       <label class="search-wrap"><input class="search" id="search" type="search" placeholder="Найти модель или поставщика…" aria-label="Поиск"></label>
-      <label class="sort-label">Сортировка
-        <select id="sort" class="sort"><option value="input">Дешевле ввод</option><option value="output">Дешевле вывод</option><option value="name">Название А—Я</option><option value="context">Больше контекст</option></select>
-      </label>
+      <div class="sort-hint">Сортировка: ↑ по возрастанию · ↓ по убыванию</div>
     </div>
     <div class="table-scroll"><table>
-      <thead><tr><th>Модель</th><th>Поставщик</th><th><button data-sort="input">Ввод / 1M ↕</button></th><th><button data-sort="output">Вывод / 1M ↕</button></th><th><button data-sort="context">Контекст ↕</button></th></tr></thead>
+      <thead><tr>
+        <th data-sort-column="name">Модель<span class="sort-buttons"><button class="sort-arrow" data-sort="name" data-direction="asc" title="Модель: по возрастанию" aria-label="Сортировать модель по возрастанию">↑</button><button class="sort-arrow" data-sort="name" data-direction="desc" title="Модель: по убыванию" aria-label="Сортировать модель по убыванию">↓</button></span></th>
+        <th data-sort-column="provider">Поставщик<span class="sort-buttons"><button class="sort-arrow" data-sort="provider" data-direction="asc" title="Поставщик: по возрастанию" aria-label="Сортировать поставщиков по возрастанию">↑</button><button class="sort-arrow" data-sort="provider" data-direction="desc" title="Поставщик: по убыванию" aria-label="Сортировать поставщиков по убыванию">↓</button></span></th>
+        <th data-sort-column="input">Ввод / 1M<span class="sort-buttons"><button class="sort-arrow" data-sort="input" data-direction="asc" title="Цена ввода: по возрастанию" aria-label="Сортировать цену ввода по возрастанию">↑</button><button class="sort-arrow" data-sort="input" data-direction="desc" title="Цена ввода: по убыванию" aria-label="Сортировать цену ввода по убыванию">↓</button></span></th>
+        <th data-sort-column="output">Вывод / 1M<span class="sort-buttons"><button class="sort-arrow" data-sort="output" data-direction="asc" title="Цена вывода: по возрастанию" aria-label="Сортировать цену вывода по возрастанию">↑</button><button class="sort-arrow" data-sort="output" data-direction="desc" title="Цена вывода: по убыванию" aria-label="Сортировать цену вывода по убыванию">↓</button></span></th>
+        <th data-sort-column="context">Контекст<span class="sort-buttons"><button class="sort-arrow" data-sort="context" data-direction="asc" title="Контекст: по возрастанию" aria-label="Сортировать размер контекста по возрастанию">↑</button><button class="sort-arrow" data-sort="context" data-direction="desc" title="Контекст: по убыванию" aria-label="Сортировать размер контекста по убыванию">↓</button></span></th>
+      </tr></thead>
       <tbody id="rows"></tbody>
     </table><div class="empty" id="empty" hidden>По этому запросу моделей не нашлось.</div></div>
     <div class="count" id="count"></div>
@@ -306,16 +310,36 @@ DASHBOARD_TEMPLATE = r'''<!doctype html>
 <script type="application/json" id="catalog-data">@@DATA@@</script>
 <script>
 const models=JSON.parse(document.getElementById('catalog-data').textContent);
-const tbody=document.getElementById('rows'), search=document.getElementById('search'), sort=document.getElementById('sort');
+const tbody=document.getElementById('rows'), search=document.getElementById('search');
+let sortState={key:'input',direction:'asc'};
 const nf=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:4});
 const colors=[['#edf1ff','#4658a6'],['#e6f8f2','#26795e'],['#fff1e6','#a35d2e'],['#f8eafa','#884a91'],['#e8f5fb','#39708a'],['#fff0f1','#a54d5c']];
 function cell(value,className){const e=document.createElement('td');e.className=className||'';e.textContent=value;return e}
 function render(){
  const q=search.value.trim().toLocaleLowerCase('ru');
  const visible=models.filter(m=>(m.name+' '+m.provider+' '+m.description).toLocaleLowerCase('ru').includes(q));
- const key=sort.value;
- visible.sort((a,b)=>key==='name'?a.name.localeCompare(b.name,'ru'):
-   key==='context'?(b.context_tokens||0)-(a.context_tokens||0):a[key+'_price_per_million']-b[key+'_price_per_million']);
+ const {key,direction}=sortState;
+ visible.sort((a,b)=>{
+   let comparison;
+   if(key==='name'||key==='provider') comparison=a[key].localeCompare(b[key],'ru');
+   else {
+     const field=key==='context'?'context_tokens':key+'_price_per_million';
+     const av=a[field],bv=b[field];
+     if(av==null&&bv!=null) return 1;
+     if(bv==null&&av!=null) return -1;
+     comparison=av==null?0:av-bv;
+   }
+   return direction==='asc'?comparison:-comparison;
+ });
+ document.querySelectorAll('.sort-arrow').forEach(button=>{
+   const active=button.dataset.sort===key&&button.dataset.direction===direction;
+   button.classList.toggle('active',active);
+   button.setAttribute('aria-pressed',String(active));
+ });
+ document.querySelectorAll('[data-sort-column]').forEach(column=>{
+   if(column.dataset.sortColumn===key) column.setAttribute('aria-sort',direction==='asc'?'ascending':'descending');
+   else column.removeAttribute('aria-sort');
+ });
  tbody.replaceChildren();
  for(const m of visible){
    const tr=document.createElement('tr'), model=document.createElement('td');
@@ -331,8 +355,10 @@ function render(){
  document.getElementById('count').textContent=`Показано ${nf.format(visible.length)} из ${nf.format(models.length)} моделей`;
  document.getElementById('empty').hidden=visible.length!==0;
 }
-search.addEventListener('input',render);sort.addEventListener('change',render);
-document.querySelectorAll('[data-sort]').forEach(b=>b.addEventListener('click',()=>{sort.value=b.dataset.sort;render()}));
+search.addEventListener('input',render);
+document.querySelectorAll('.sort-arrow').forEach(button=>button.addEventListener('click',()=>{
+ sortState={key:button.dataset.sort,direction:button.dataset.direction};render();
+}));
 render();
 </script>
 </body>
