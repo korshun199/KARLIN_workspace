@@ -290,8 +290,8 @@ DASHBOARD_TEMPLATE = r'''<!doctype html>
   </header>
   <section class="panel" aria-label="Сравнение цен моделей">
     <div class="toolbar">
-      <label class="search-wrap"><input class="search" id="search" type="search" placeholder="Найти модель или поставщика…" aria-label="Поиск"></label>
-      <div class="sort-hint">Сортировка: ↑ по возрастанию · ↓ по убыванию</div>
+      <label class="search-wrap"><input class="search" id="search" type="search" placeholder="Например: gpt astra lun…" aria-label="Поиск по словам"></label>
+      <div class="sort-hint">Поиск по словам и началу слова · lun найдёт Luna</div>
     </div>
     <div class="table-scroll"><table>
       <thead><tr>
@@ -315,11 +315,20 @@ let sortState={key:'input',direction:'asc'};
 const nf=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:4});
 const colors=[['#edf1ff','#4658a6'],['#e6f8f2','#26795e'],['#fff1e6','#a35d2e'],['#f8eafa','#884a91'],['#e8f5fb','#39708a'],['#fff0f1','#a54d5c']];
 function cell(value,className){const e=document.createElement('td');e.className=className||'';e.textContent=value;return e}
+function words(value){return value.toLocaleLowerCase('ru').match(/[a-zа-яё0-9]+/g)||[]}
+function matchScore(model,terms){
+ const nameWords=words(model.name),allWords=words(model.name+' '+model.provider+' '+model.description);
+ return terms.reduce((score,term)=>score+(nameWords.some(word=>word.startsWith(term))?2:allWords.some(word=>word.startsWith(term))?1:0),0);
+}
 function render(){
- const q=search.value.trim().toLocaleLowerCase('ru');
- const visible=models.filter(m=>(m.name+' '+m.provider+' '+m.description).toLocaleLowerCase('ru').includes(q));
+ const terms=[...new Set(words(search.value.trim()))];
+ const ranked=models.map(model=>({model,score:matchScore(model,terms)}));
+ const bestScore=terms.length?Math.max(0,...ranked.map(item=>item.score)):0;
+ const visible=ranked.filter(item=>!terms.length||item.score===bestScore&&bestScore>0);
  const {key,direction}=sortState;
- visible.sort((a,b)=>{
+ visible.sort((left,right)=>{
+   if(left.score!==right.score) return right.score-left.score;
+   const a=left.model,b=right.model;
    let comparison;
    if(key==='name'||key==='provider') comparison=a[key].localeCompare(b[key],'ru');
    else {
@@ -341,7 +350,7 @@ function render(){
    else column.removeAttribute('aria-sort');
  });
  tbody.replaceChildren();
- for(const m of visible){
+ for(const {model:m} of visible){
    const tr=document.createElement('tr'), model=document.createElement('td');
    const title=document.createElement('div');title.className='model';title.textContent=m.name;model.append(title);
    if(m.description){const d=document.createElement('div');d.className='description';d.textContent=m.description;model.append(d)}
